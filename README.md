@@ -35,7 +35,25 @@ The benchmark captures contractual disputes emerging from India's informal and s
 Unlike conventional legal datasets that focus on formal contracts or judicial decisions, HinglishContractFlow models complete dispute lifecycles, enabling research into procedural reasoning, negotiation dynamics, legal validity assessment, settlement behavior, and code-mixed legal understanding.
 
 ---
+## Dataset Access
 
+The complete HinglishContractFlow benchmark dataset is hosted on Hugging Face.
+
+### Hugging Face Repository
+
+https://huggingface.co/datasets/amulyabiradar23/HinglishContractFlow
+
+### Dataset Statistics
+
+| Metric | Value |
+|----------|----------|
+| Records | 1,000,000 |
+| Features | 59 |
+| Parquet Files | 40 |
+| Size | 595.85 MB |
+| Format | Apache Parquet |
+
+The GitHub repository contains documentation, schema definitions, methodology, and exploratory analysis resources, while the benchmark dataset itself is distributed through Hugging Face.
 ## Why HinglishContractFlow?
 
 Modern legal benchmarks largely focus on:
@@ -400,7 +418,7 @@ Evaluate AI systems under realistic Hinglish legal discourse using:
 import pandas as pd
 
 df = pd.read_parquet(
-    "Data/hinglish_contract_flow_chunk_000.parquet"
+    "chunk_0000.parquet"
 )
 
 print(df.head())
@@ -477,275 +495,3 @@ HinglishContractFlow is designed for research in:
 * Interpretable Decision Support
 ---
 
-# Documentation
-
-The repository contains detailed documentation describing benchmark design, schema structure, and generation methodology.
-
-| Document                      | Description                                                                                |
-| ----------------------------- | ------------------------------------------------------------------------------------------ |
-| `Docs/DATASET_CARD.md`        | Comprehensive dataset overview, intended uses, limitations, and benchmark characteristics  |
-| `Docs/DATA_DICTIONARY.md`     | Complete feature-level schema documentation for all 59 columns                             |
-| `Docs/METHODOLOGY.md`         | Generation pipeline, procedural simulation, statistical modeling, and validation framework |
-| `Docs/dataset_statistics.csv` | Dataset-level statistical summary                                                          |
-| `Docs/dataset_summary.json`   | Machine-readable benchmark metadata                                                        |
-
----
-
-# Exploratory Data Analysis
-
-The repository includes a collection of exploratory visualizations describing benchmark structure, statistical properties, and target distributions.
-
-## Validity Label Distribution
-
-```markdown
-![Validity Distribution](Plots/validity_distribution.png)
-```
-
----
-
-## Outcome Distribution
-
-```markdown
-![Outcome Distribution](Plots/outcome_distribution.png)
-```
-
----
-
-## Ambiguity Score Distribution
-
-```markdown
-![Ambiguity Distribution](Plots/ambiguity_distribution.png)
-```
-
----
-
-## Stage Length Distribution
-
-```markdown
-![Stage Length Distribution](Plots/stage_length_distribution.png)
-```
-
----
-
-## Dataset Split Distribution
-
-```markdown
-![Split Distribution](Plots/split_distribution.png)
-```
-
----
-
-## Evidence Strength vs Arbitration Risk
-
-```markdown
-![Evidence vs Risk](Plots/evidence_vs_risk.png)
-```
-
----
-
-## Feature Correlation Analysis
-
-```markdown
-![Correlation Heatmap](Plots/correlation_heatmap.png)
-```
-
----
-
-# Benchmark Tasks
-
-HinglishContractFlow supports multiple legal AI and contract intelligence tasks.
-
-## Classification Tasks
-
-### Contract Validity Prediction
-
-Predict:
-
-* Fully_Enforceable
-* Partially_Enforceable
-* Voidable_at_Option
-* Void_ab_initio
-
-using structured dispute information and negotiation traces.
-
----
-
-### Outcome Prediction
-
-Predict final dispute outcomes from legal, procedural, and linguistic signals.
-
-Examples include:
-
-* Mutual_Settlement
-* Mediation_Pending
-* Lok_Adalat_Referral
-* Judicial_Referral_District_Court
-
----
-
-### Difficulty Classification
-
-Estimate overall dispute complexity.
-
-Examples:
-
-* Easy
-* Medium
-* Hard
-
----
-
-## Regression Tasks
-
-### Arbitration Risk Estimation
-
-Predict:
-
-```text
-arbitration_risk_score
-```
-
----
-
-### Settlement Probability Prediction
-
-Predict:
-
-```text
-settlement_probability
-```
-
----
-
-## Retrieval Tasks
-
-### Statute Retrieval
-
-Identify the most relevant statutory framework from dispute context.
-
-Target:
-
-```text
-applicable_statute
-```
-
----
-
-## Generation Tasks
-
-### Legal Critic Generation
-
-Generate legal findings and reasoning explanations.
-
-Target:
-
-```text
-critic_finding
-```
-
----
-
-### Negotiation Understanding
-
-Model and analyze multi-turn dispute conversations stored within:
-
-```text
-negotiation_trace_json
-```
-
----
-
-## Multilingual Legal Reasoning
-
-Evaluate AI systems under realistic Hinglish legal discourse using:
-
-* linguistic_mix_ratio
-* regional_dialect
-* code-switching behavior
-* negotiation traces
-
----
-
-# Quick Start
-
-## Loading the Dataset
-
-```python
-import pandas as pd
-
-df = pd.read_parquet(
-    "Data/hinglish_contract_flow_chunk_000.parquet"
-)
-
-print(df.head())
-```
-
----
-
-## Inspect Dataset Splits
-
-```python
-print(df["split"].value_counts())
-```
-
-Expected distribution:
-
-```text
-train         800000
-validation    100000
-test          100000
-```
-
----
-
-## Example Features
-
-```python
-columns = [
-    "state",
-    "dispute_type",
-    "ambiguity_score",
-    "evidence_strength_score",
-    "validity_label",
-    "final_outcome"
-]
-
-print(df[columns].head())
-```
-
----
-
-# Research Applications
-
-HinglishContractFlow is designed for research in:
-
-### Legal AI
-
-* Contract Intelligence
-* Legal Reasoning
-* Statute Retrieval
-* Explainable Legal Systems
-
-### Arbitration Analytics
-
-* Escalation Forecasting
-* Settlement Prediction
-* Dispute Resolution Modeling
-
-### Natural Language Processing
-
-* Hinglish NLP
-* Code-Mixed Understanding
-* Legal Dialogue Modeling
-
-### Agentic Systems
-
-* Autonomous Mediation
-* Legal Copilots
-* Multi-Agent Negotiation Systems
-
-### Responsible AI
-
-* Explainability
-* Confidence Estimation
-* Interpretable Decision Support
