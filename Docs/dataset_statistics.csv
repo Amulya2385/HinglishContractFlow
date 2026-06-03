@@ -1,0 +1,6 @@
+Metric,Value
+Total Records,50000
+Train Records,40000
+Validation Records,5000
+Test Records,5000
+Total Features,59

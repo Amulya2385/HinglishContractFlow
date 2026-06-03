@@ -1,0 +1,27 @@
+{
+    "dataset_name": "HinglishContractFlow",
+    "records": 1000000,
+    "features": 59,
+    "states": 5,
+    "dispute_types": 6,
+    "statutes": 59,
+    "size_mb": 595.85,
+    "train_records": 800000,
+    "validation_records": 100000,
+    "test_records": 100000,
+    "states_list": [
+        "Maharashtra",
+        "Punjab",
+        "Haryana",
+        "Rajasthan",
+        "Uttar_Pradesh"
+    ],
+    "dispute_categories": [
+        "agricultural_lease",
+        "commercial_rental",
+        "cold_storage",
+        "water_sharing",
+        "machinery_lease",
+        "logistics_partnership"
+    ]
+}
