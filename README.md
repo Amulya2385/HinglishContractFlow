@@ -241,57 +241,43 @@ The repository includes a collection of exploratory visualizations describing be
 
 ## Validity Label Distribution
 
-```markdown
 ![Validity Distribution](Plots/validity_distribution.png)
-```
 
 ---
 
 ## Outcome Distribution
 
-```markdown
 ![Outcome Distribution](Plots/outcome_distribution.png)
-```
 
 ---
 
 ## Ambiguity Score Distribution
 
-```markdown
 ![Ambiguity Distribution](Plots/ambiguity_distribution.png)
-```
 
 ---
 
 ## Stage Length Distribution
 
-```markdown
 ![Stage Length Distribution](Plots/stage_length_distribution.png)
-```
 
 ---
 
 ## Dataset Split Distribution
 
-```markdown
 ![Split Distribution](Plots/split_distribution.png)
-```
 
 ---
 
 ## Evidence Strength vs Arbitration Risk
 
-```markdown
 ![Evidence vs Risk](Plots/evidence_vs_risk.png)
-```
 
 ---
 
 ## Feature Correlation Analysis
 
-```markdown
 ![Correlation Heatmap](Plots/correlation_heatmap.png)
-```
 
 ---
 
