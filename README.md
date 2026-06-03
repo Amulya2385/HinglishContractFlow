@@ -219,6 +219,31 @@ Transportation agreements, delivery obligations, distribution partnerships, and 
 | Test       | 100,000 | 10%        |
 
 The predefined split assignments are stored directly within the dataset to support reproducible experimentation.
+## Working with Dataset Splits
+
+The benchmark stores predefined split assignments directly within the `split` column.
+
+Example:
+
+```python
+import pandas as pd
+
+df = pd.read_parquet("chunk_0000.parquet")
+
+train_df = df[df["split"] == "train"]
+validation_df = df[df["split"] == "validation"]
+test_df = df[df["split"] == "test"]
+
+print(len(train_df))
+print(len(validation_df))
+print(len(test_df))
+```
+
+This design ensures reproducible experimentation while avoiding the need for separate train, validation, and test files.
+
+```
+```
+
 ---
 
 # Documentation
